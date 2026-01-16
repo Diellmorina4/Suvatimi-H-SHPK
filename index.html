@@ -121,7 +121,7 @@
             <h2 data-en="Our Suppliers" data-sq="Furnizuesit Tanë" data-suppliers-title>Our Suppliers</h2>
             <p class="section-subtitle" data-en="We work with trusted quality material suppliers" data-sq="Punojmë me furnizues të besuar të materialeve cilësore" data-suppliers-subtitle>We work with trusted quality material suppliers</p>
             <div class="suppliers-grid">
-                <a href="https://gemix.com/" target="_blank" class="supplier-card supplier-link">
+                <a onclick="askPermissionToVisit('gemix', 'https://gemix.com/')" class="supplier-card supplier-link">
                     <div class="supplier-logo">
                         <img src="gemix-logo.png" alt="Gemix Logo">
                     </div>
@@ -129,7 +129,7 @@
                     <h3>Gemix</h3>
                     <p>Premium quality materials and supplies for facade and construction projects</p>
                 </a>
-                <a href="https://knauf.com/en" target="_blank" class="supplier-card supplier-link">
+                <a onclick="askPermissionToVisit('knauf', 'https://knauf.com/en')" class="supplier-card supplier-link">
                     <div class="supplier-logo">
                         <img src="Knauf.png" alt="Knauf Logo">
                     </div>
@@ -226,7 +226,7 @@
                         <label data-label-service>Service Type *</label>
                         <select name="service_type" required>
                             <option value="" data-select-service>Select service</option>
-                            <option value="suvatim" data-opt-suvatim>Suvatim (Rendering)</option>
+                            <option value="suvatim" data-opt-suvatim>Suvatim </option>
                             <option value="fasad" data-opt-fasad>Fasad (Facade)</option>
                             <option value="knauf" data-opt-knauf>Knauf Systems</option>
                             <option value="ngjyra" data-opt-ngjyra>Ngjyra (Painting)</option>

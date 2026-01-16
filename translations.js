@@ -120,7 +120,7 @@ const translations = {
     },
     sq: {
         // Navigation
-        home: "Shtëpi",
+        home: "Kreu",
         services: "Shërbime",
         about: "Rreth",
         suppliers: "Furnizuesit",
@@ -139,15 +139,15 @@ const translations = {
         
         // Services section
         ourServices: "Shërbime Tona",
-        suvatimTitle: "Suvatim (Pastrim)",
+        suvatimTitle: "Suvatim ",
         suvatimDesc: "Shërbime profesionale të suvatimit dhe pasturimit duke përdorur materiale cilësore për përfundime të lëmuara dhe të qëndrueshme.",
-        fasadTitle: "Fasad (Mbulesë)",
+        fasadTitle: "Fasad",
         fasadDesc: "Instalim dhe renovim i plotë të sistemeve të fasadës me materiale premium dhe punëkrahasim expert.",
         knaufTitle: "Sisteme Knauf",
         knaufDesc: "Sisteme të specializuara Knauf drillboard dhe ndarjesh për aplikime të brendshme dhe të jashtme.",
-        ngjyraTitle: "Ngjyra (Bojë)",
+        ngjyraTitle: "Ngjyra ",
         ngjyraDesc: "Shërbime profesionale të bojëzimit me ngjyra të lartë cilësore dhe përfuntime për mbulim estetik dhe mbrojtës.",
-        izolimTitle: "Izolim (Nxehtësi)",
+        izolimTitle: "Izolim ",
         izolimDesc: "Zgjidhje izolimi termik dhe akustik për të përmirësuar efikasitetin energjetik dhe komoditetin e pronës tuaj.",
         
         // Suppliers section
@@ -184,7 +184,7 @@ const translations = {
         
         // Form labels
         fullName: "Emri i Plotë",
-        email: "Posta Elektronike",
+        email: "Email",
         phone: "Telefoni",
         propertyType: "Lloji i Pronës",
         selectPropertyType: "Zgjidh llojin e pronës",
@@ -192,8 +192,8 @@ const translations = {
         commercial: "Tregtare",
         industrial: "Industriale",
         other: "Të tjera",
-        preferredDate: "Data e Preferuar",
-        preferredTime: "Koha e Preferuar",
+        preferredDate: "Data qe deshironi per takimin",
+        preferredTime: "Koha e deshiruar per takimin",
         selectTime: "Zgjidh kohën",
         serviceType: "Lloji i Shërbimit",
         selectService: "Zgjidh shërbimin",

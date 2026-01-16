@@ -461,3 +461,25 @@ document.addEventListener('click', function(event) {
         navMenu.classList.remove('active');
     }
 });
+
+// Handle permission request for external supplier links
+function askPermissionToVisit(supplier, url) {
+    const currentLang = localStorage.getItem('language') || 'en';
+    const t = typeof translations !== 'undefined' ? translations[currentLang] : null;
+    
+    let message, confirmText, cancelText;
+    
+    if (currentLang === 'sq') {
+        message = `Do të shkoni në faqen e ${supplier.toUpperCase()}?`;
+        confirmText = 'Po';
+        cancelText = 'Jo';
+    } else {
+        message = `You are about to visit the ${supplier.toUpperCase()} website. Do you want to continue?`;
+        confirmText = 'Yes';
+        cancelText = 'No';
+    }
+    
+    if (confirm(message)) {
+        window.open(url, '_blank');
+    }
+}
