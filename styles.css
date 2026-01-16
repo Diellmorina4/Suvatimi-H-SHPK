@@ -49,7 +49,7 @@ body::before {
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
     color: var(--text-light);
     padding: 20px;
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     width: 250px;
@@ -834,6 +834,22 @@ body.menu-right .navbar {
 @media (max-width: 768px) {
     body {
         margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    body.menu-left {
+        margin-left: 0;
+    }
+
+    body.menu-top {
+        margin-left: 0;
+        margin-top: 100px;
+    }
+
+    body.menu-right {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .navbar {
@@ -842,12 +858,26 @@ body.menu-right .navbar {
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
+        right: auto;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 15px 20px;
         flex-wrap: wrap;
+    }
+
+    body.menu-top .navbar {
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+    }
+
+    body.menu-right .navbar {
+        left: auto;
+        right: 0;
+        width: 100%;
     }
 
     .logo h1 {
@@ -874,6 +904,25 @@ body.menu-right .navbar {
         overflow-y: auto;
     }
 
+    body.menu-top .nav-menu {
+        position: static;
+        display: none;
+        background: var(--primary-red);
+        max-height: none;
+    }
+
+    body.menu-top .nav-menu.active {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 0;
+    }
+
+    body.menu-top .nav-menu a {
+        padding: 10px 15px;
+        border-bottom: 4px solid transparent;
+    }
+
     .nav-menu.active {
         display: flex;
     }
@@ -886,6 +935,12 @@ body.menu-right .navbar {
     .nav-menu a:hover {
         padding-left: 15px;
         border-left: none;
+    }
+
+    body.menu-top .nav-menu a:hover {
+        border-left: none;
+        border-bottom-color: var(--text-light);
+        padding-left: 15px;
     }
 
     .hamburger {
@@ -903,8 +958,22 @@ body.menu-right .navbar {
         position: static;
     }
 
+    body.menu-top .language-switcher {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        order: auto;
+        width: auto;
+        margin-left: auto;
+    }
+
     .lang-dropdown-btn {
         width: 100%;
+    }
+
+    body.menu-top .lang-dropdown-btn {
+        width: auto;
     }
 
     .language-dropdown {
@@ -913,6 +982,11 @@ body.menu-right .navbar {
         top: 70px;
         left: 20px;
         right: 20px;
+    }
+
+    body.menu-top .language-dropdown {
+        top: auto;
+        bottom: auto;
     }
 
     .menu-position-selector {
