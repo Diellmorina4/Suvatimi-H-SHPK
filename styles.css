@@ -163,7 +163,7 @@ body::before {
 .language-dropdown {
     display: none;
     position: absolute;
-    bottom: 60px;
+    top: 60px;
     left: 20px;
     right: 20px;
     background: rgba(139, 0, 0, 0.95);
