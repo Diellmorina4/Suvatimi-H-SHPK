@@ -889,14 +889,12 @@ body.navbar-top .hero {
     body.navbar-left .navbar {
         width: 100%;
         height: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: static;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 15px 20px;
+        z-index: 100;
     }
 
     body.navbar-left .logo h1 {
@@ -909,69 +907,47 @@ body.navbar-top .hero {
     }
 
     body.navbar-left .nav-menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: var(--primary-red);
-        padding: 20px;
-        gap: 0;
-        width: 100%;
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
+        display: none !important;
     }
 
     body.navbar-left .nav-menu.active {
-        display: flex;
-    }
-
-    body.navbar-left .nav-menu a {
-        padding: 12px 15px;
-        border-left: none;
-    }
-
-    body.navbar-left .nav-menu a:hover {
-        padding-left: 15px;
-        border-left: none;
+        display: none !important;
     }
 
     body.navbar-left .hamburger {
-        display: flex;
-        order: 0;
-        margin-bottom: 0;
+        display: none;
     }
 
     body.navbar-left .controls-section {
-        margin-top: 15px;
-        padding-top: 15px;
-        order: 4;
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        position: static;
-        flex-direction: column;
+        display: flex;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        flex-direction: row;
+        gap: 0;
     }
 
     body.navbar-left .position-toggle-btn {
-        width: 100%;
+        display: none;
     }
 
     body.navbar-left .language-switcher {
         border-top: none;
         position: static;
+        width: auto;
     }
 
     body.navbar-left .lang-dropdown-btn {
-        width: 100%;
+        width: auto;
     }
 
     body.navbar-left .language-dropdown {
-        position: fixed;
+        position: absolute;
         bottom: auto;
-        top: 70px;
-        left: 20px;
+        top: 100%;
+        left: auto;
         right: 20px;
+        margin-top: 10px;
     }
 
     /* Top navbar on mobile */
@@ -981,64 +957,48 @@ body.navbar-top .hero {
         position: static;
         flex-direction: row;
         flex-wrap: wrap;
+        z-index: 100;
     }
 
     body.navbar-top .nav-menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: var(--primary-red);
-        padding: 20px;
-        gap: 0;
-        width: 100%;
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
+        display: none !important;
     }
 
     body.navbar-top .nav-menu.active {
-        display: flex;
-    }
-
-    body.navbar-top .nav-menu a {
-        padding: 12px 15px;
-        border-left: none;
-        display: block;
+        display: none !important;
     }
 
     body.navbar-top .hamburger {
-        display: flex;
-        order: 0;
-        margin-bottom: 0;
+        display: none;
     }
 
     body.navbar-top .controls-section {
-        margin-top: 15px;
+        display: flex;
+        margin-top: 0;
         padding-top: 0;
         border-top: none;
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        gap: 0;
     }
 
     body.navbar-top .position-toggle-btn {
-        width: 100%;
+        display: none;
     }
 
     body.navbar-top .language-switcher {
         border-top: none;
-        width: 100%;
+        width: auto;
     }
 
     body.navbar-top .lang-dropdown-btn {
-        width: 100%;
+        width: auto;
     }
 
     /* Content sections */
     body.navbar-left .hero,
     body.navbar-top .hero {
-        margin-top: 70px;
+        margin-top: 0;
+        margin-left: 0;
     }
 
     .hero-content h1 {
