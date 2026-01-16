@@ -135,7 +135,7 @@ const translations = {
         heroTitle: "SUVATIMI-H",
         heroSubtitle: "Shërbime Profesionale të Fasadës",
         heroTagline: "Ndërtim Cilësor & Punë Fasade që Mund ta Besoni",
-        getInTouch: "Kontaktoni Ne",
+        getInTouch: "Na Kontaktoni",
         
         // Services section
         ourServices: "Shërbime Tona",
