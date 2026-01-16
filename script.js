@@ -483,37 +483,3 @@ function askPermissionToVisit(supplier, url) {
         window.open(url, '_blank');
     }
 }
-
-// Handle appointment form submission
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.appointment-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(() => {
-                const formMessage = document.getElementById('form-message');
-                
-                // Show success message
-                formMessage.style.display = 'block';
-                
-                // Clear form
-                form.reset();
-                
-                // Hide form
-                form.style.opacity = '0.5';
-                form.style.pointerEvents = 'none';
-                
-                // Scroll to message
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .catch(error => console.error('Form error:', error));
-        });
-    }
-});
