@@ -489,15 +489,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.appointment-form');
     if (form) {
         form.addEventListener('submit', function(e) {
-            // Let Netlify handle the form, but show success message after a delay
-            setTimeout(function() {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData)
+            })
+            .then(() => {
                 const formMessage = document.getElementById('form-message');
-                if (formMessage) {
-                    formMessage.style.display = 'block';
-                    form.style.display = 'none';
-                    window.scrollTo(0, formMessage.offsetTop - 100);
-                }
-            }, 1000);
+                const formInputs = form.querySelectorAll('input, textarea, select');
+                
+                // Show success message
+                formMessage.style.display = 'block';
+                
+                // Clear form
+                form.reset();
+                
+                // Hide form after showing success
+                setTimeout(() => {
+                    form.style.opacity = '0.5';
+                    form.style.pointerEvents = 'none';
+                }, 500);
+                
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            })
+            .catch(error => console.log('Form submitted:', error));
         });
     }
 });

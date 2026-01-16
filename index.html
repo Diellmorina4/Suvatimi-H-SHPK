@@ -170,9 +170,10 @@
                     </div>
                 </div>
 
-                <form class="appointment-form" name="appointment" method="POST" netlify>
+                <form class="appointment-form" name="appointment" method="POST" netlify netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="appointment">
-                    <div id="form-message" style="display:none; padding: 15px; margin-bottom: 20px; background: #d4edda; color: #155724; border-radius: 5px; text-align: center;">
+                    <input type="hidden" name="bot-field">
+                    <div id="form-message" style="display:none; padding: 15px; margin-bottom: 20px; background: #d4edda; color: #155724; border-radius: 5px; text-align: center; font-size: 16px;">
                         ✓ Thank you! Your appointment has been submitted. We'll contact you soon!
                     </div>
                     <div class="form-row">
