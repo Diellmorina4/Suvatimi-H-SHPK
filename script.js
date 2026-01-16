@@ -45,8 +45,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize EmailJS
-    emailjs.init('He199eMJjcMN_xQVm');
+    // Wait for EmailJS to be available
+    function initEmailJS() {
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('He199eMJjcMN_xQVm');
+        } else {
+            setTimeout(initEmailJS, 100);
+        }
+    }
+    initEmailJS();
     
     const savedLanguage = localStorage.getItem('language') || 'en';
     changeLanguage(savedLanguage);
@@ -325,6 +332,12 @@ function handleForm(event) {
     const phone = event.target.elements[2].value;
     const message = event.target.elements[3].value;
     
+    // Check if EmailJS is available
+    if (typeof emailjs === 'undefined') {
+        alert('Email service is not available. Please contact us directly.');
+        return;
+    }
+    
     // Send email using EmailJS
     emailjs.send('service_ws6458k', 'template_jsdu5zt', {
         name: name,
@@ -363,6 +376,12 @@ function handleAppointment(event) {
         month: 'long', 
         day: 'numeric' 
     });
+    
+    // Check if EmailJS is available
+    if (typeof emailjs === 'undefined') {
+        alert('Email service is not available. Please contact us directly.');
+        return;
+    }
     
     // Send email using EmailJS
     emailjs.send('service_ws6458k', 'template_jsdu5zt', {
