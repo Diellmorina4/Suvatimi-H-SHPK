@@ -8,10 +8,6 @@ const translations = {
         suppliers: "Suppliers",
         bookAppointment: "Book Appointment",
         contact: "Contact",
-        menuPosition: "Menu Position:",
-        menuLeft: "Left",
-        menuTop: "Top",
-        menuRight: "Right",
         
         // Hero section
         heroTitle: "SUVATIMI-H",
@@ -126,10 +122,6 @@ const translations = {
         suppliers: "Furnizuesit",
         bookAppointment: "Rezervo Takimin",
         contact: "Kontakt",
-        menuPosition: "Pozicioni i Menusë:",
-        menuLeft: "Majtas",
-        menuTop: "Sipër",
-        menuRight: "Djathtas",
         
         // Hero section
         heroTitle: "SUVATIMI-H",
