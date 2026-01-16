@@ -1000,7 +1000,7 @@ body.navbar-top .hero {
         top: 100%;
         left: auto;
         right: 20px;
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
     /* Content sections */
@@ -1023,54 +1023,55 @@ body.navbar-top .hero {
     }
 
     .hero {
-        height: 400px;
+        height: 300px;
     }
 
     .services h2,
     .about h2,
     .appointments h2,
     .contact h2 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 25px;
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px;
     }
 
     .appointments-wrapper {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px;
     }
 
     .contact-wrapper {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 10px;
     }
 
     .services {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .about {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .appointments {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .contact {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .image-placeholder {
-        height: 250px;
+        height: 180px;
     }
 
     .nav-menu a {
@@ -1097,54 +1098,78 @@ body.navbar-top .hero {
 @media (max-width: 480px) {
     .navbar .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     .logo h1 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .hero {
+        height: 250px;
     }
 
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 10px;
     }
 
     .hero-content > p {
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     .hero-content .subtitle {
-        font-size: 12px;
+        font-size: 11px;
+        margin-bottom: 15px;
     }
 
     .cta-button {
-        padding: 12px 30px;
-        font-size: 14px;
+        padding: 10px 25px;
+        font-size: 13px;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .services h2,
     .about h2,
     .contact h2 {
-        font-size: 26px;
+        font-size: 22px;
+        margin-bottom: 15px;
     }
 
     .service-card {
-        padding: 20px;
+        padding: 15px;
     }
 
     .service-icon {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .service-card p {
+        font-size: 13px;
     }
 
     .contact-form {
-        padding: 20px;
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
     }
 
     .form-group input,
     .form-group textarea {
         font-size: 16px;
+        padding: 8px;
     }
 }
