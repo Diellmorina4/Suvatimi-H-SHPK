@@ -493,14 +493,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const formData = new FormData(form);
             
-            fetch('/', {
+            fetch(form.action, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData)
+                body: formData
             })
             .then(() => {
                 const formMessage = document.getElementById('form-message');
-                const formInputs = form.querySelectorAll('input, textarea, select');
                 
                 // Show success message
                 formMessage.style.display = 'block';
@@ -508,16 +506,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Clear form
                 form.reset();
                 
-                // Hide form after showing success
-                setTimeout(() => {
-                    form.style.opacity = '0.5';
-                    form.style.pointerEvents = 'none';
-                }, 500);
+                // Hide form
+                form.style.opacity = '0.5';
+                form.style.pointerEvents = 'none';
                 
                 // Scroll to message
                 formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             })
-            .catch(error => console.log('Form submitted:', error));
+            .catch(error => console.error('Form error:', error));
         });
     }
 });
