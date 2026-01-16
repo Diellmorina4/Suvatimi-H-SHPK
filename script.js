@@ -483,3 +483,21 @@ function askPermissionToVisit(supplier, url) {
         window.open(url, '_blank');
     }
 }
+
+// Handle appointment form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.appointment-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // Let Netlify handle the form, but show success message after a delay
+            setTimeout(function() {
+                const formMessage = document.getElementById('form-message');
+                if (formMessage) {
+                    formMessage.style.display = 'block';
+                    form.style.display = 'none';
+                    window.scrollTo(0, formMessage.offsetTop - 100);
+                }
+            }, 1000);
+        });
+    }
+});
