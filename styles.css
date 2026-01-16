@@ -207,6 +207,118 @@ body::before {
     padding-left: 16px;
 }
 
+/* Menu Position Selector */
+.menu-position-selector {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.menu-position-selector label {
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-position-selector select {
+    width: 100%;
+    padding: 10px;
+    background: var(--text-light);
+    color: var(--text-dark);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-position-selector select:hover,
+.menu-position-selector select:focus {
+    border-color: var(--text-light);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Menu Position Variations */
+body.menu-top {
+    margin-left: 0;
+    margin-top: 100px;
+}
+
+body.menu-top .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 15px 20px;
+    z-index: 100;
+    align-items: center;
+}
+
+body.menu-top .logo {
+    margin-right: 30px;
+}
+
+body.menu-top .logo h1 {
+    font-size: 18px;
+}
+
+body.menu-top .logo .tagline {
+    display: none;
+}
+
+body.menu-top .nav-menu {
+    flex-direction: row;
+    gap: 0;
+    margin: 0;
+    flex: 1;
+}
+
+body.menu-top .nav-menu a {
+    padding: 10px 15px;
+    border-left: none;
+    border-bottom: 4px solid transparent;
+}
+
+body.menu-top .nav-menu a:hover {
+    border-left: none;
+    border-bottom-color: var(--text-light);
+    padding-left: 15px;
+}
+
+body.menu-top .language-switcher {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 20px;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: auto;
+}
+
+body.menu-top .menu-position-selector {
+    margin-top: 0;
+    margin-left: 15px;
+    padding: 10px 15px;
+}
+
+body.menu-right {
+    margin-left: 0;
+    margin-right: 250px;
+}
+
+body.menu-right .navbar {
+    left: auto;
+    right: 0;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -735,6 +847,7 @@ body::before {
         justify-content: space-between;
         align-items: center;
         padding: 15px 20px;
+        flex-wrap: wrap;
     }
 
     .logo h1 {
@@ -802,8 +915,16 @@ body::before {
         right: 20px;
     }
 
+    .menu-position-selector {
+        order: 5;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
     .hero {
         margin-top: 70px;
+        height: 400px;
     }
 
     .hero-content h1 {
@@ -818,11 +939,8 @@ body::before {
         font-size: 14px;
     }
 
-    .hero {
-        height: 400px;
-    }
-
     .services h2,
+    .suppliers h2,
     .about h2,
     .appointments h2,
     .contact h2 {
@@ -850,6 +968,10 @@ body::before {
     }
 
     .services {
+        padding: 50px 0;
+    }
+
+    .suppliers {
         padding: 50px 0;
     }
 
@@ -888,6 +1010,14 @@ body::before {
         padding: 8px;
         font-size: 11px;
     }
+
+    .suppliers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-card {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -921,8 +1051,14 @@ body::before {
         grid-template-columns: 1fr;
     }
 
+    .suppliers-grid {
+        grid-template-columns: 1fr;
+    }
+
     .services h2,
+    .suppliers h2,
     .about h2,
+    .appointments h2,
     .contact h2 {
         font-size: 26px;
     }
@@ -931,16 +1067,154 @@ body::before {
         padding: 20px;
     }
 
+    .supplier-card {
+        padding: 20px;
+    }
+
     .service-icon {
         font-size: 36px;
+    }
+
+    .supplier-logo {
+        font-size: 40px;
+    }
+
+    .supplier-logo img {
+        max-height: 80px;
     }
 
     .contact-form {
         padding: 20px;
     }
 
+    .appointment-form {
+        padding: 20px;
+    }
+
     .form-group input,
+    .form-group select,
     .form-group textarea {
         font-size: 16px;
+    }
+
+    .menu-position-selector {
+        padding: 10px;
+    }
+
+    .menu-position-selector label {
+        font-size: 11px;
+    }
+
+    .menu-position-selector select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 16px;
+    }
+
+    .about-list li {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (max 360px) */
+@media (max-width: 360px) {
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .services h2,
+    .suppliers h2,
+    .about h2,
+    .appointments h2,
+    .contact h2 {
+        font-size: 22px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .supplier-card {
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
+}
+
+/* Tablet and medium devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        margin-left: 200px;
+    }
+
+    .navbar {
+        width: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .suppliers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .appointments-wrapper {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+/* Large devices (Desktop) */
+@media (min-width: 1025px) {
+    body {
+        margin-left: 250px;
+    }
+
+    .navbar {
+        width: 250px;
     }
 }

@@ -4,6 +4,24 @@ function toggleMenu() {
     navMenu.classList.toggle('active');
 }
 
+// Change menu position
+function changeMenuPosition(position) {
+    // Remove all position classes
+    document.body.classList.remove('menu-left', 'menu-top', 'menu-right');
+    
+    // Add the selected position class
+    if (position === 'top') {
+        document.body.classList.add('menu-top');
+    } else if (position === 'right') {
+        document.body.classList.add('menu-right');
+    } else {
+        document.body.classList.add('menu-left');
+    }
+    
+    // Save preference to localStorage
+    localStorage.setItem('menuPosition', position);
+}
+
 // Language dropdown toggle
 function toggleLanguageDropdown() {
     const dropdown = document.getElementById('language-dropdown');
@@ -55,7 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initEmailJS();
     
-    const savedLanguage = localStorage.getItem('language') || 'en';
+    // Restore menu position from localStorage
+    const savedMenuPosition = localStorage.getItem('menuPosition') || 'left';
+    changeMenuPosition(savedMenuPosition);
+    document.getElementById('menu-position').value = savedMenuPosition;
+        const savedLanguage = localStorage.getItem('language') || 'en';
     changeLanguage(savedLanguage);
     updateLanguageButtons(savedLanguage);
 });
@@ -288,6 +310,25 @@ function changeLanguage(lang) {
     document.querySelectorAll('[data-send-message]').forEach(el => {
         el.textContent = t.sendMessage;
     });
+    
+    // Update Menu Position Selector
+    document.querySelectorAll('.menu-position-selector label').forEach(el => {
+        el.textContent = t.menuPosition;
+    });
+    
+    // Update select option
+    const selectOptions = document.querySelectorAll('#menu-position option');
+    if (selectOptions.length > 0) {
+        if (lang === 'sq') {
+            selectOptions[0].textContent = "Majtas";
+            selectOptions[1].textContent = "Sipër";
+            selectOptions[2].textContent = "Djathtas";
+        } else {
+            selectOptions[0].textContent = "Left";
+            selectOptions[1].textContent = "Top";
+            selectOptions[2].textContent = "Right";
+        }
+    }
     
     // Update Footer
     document.querySelectorAll('[data-copyright]').forEach(el => {
