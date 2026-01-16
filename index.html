@@ -164,26 +164,26 @@
                     </div>
                 </div>
 
-                <form class="appointment-form" onsubmit="handleAppointment(event)">
+                <form class="appointment-form" action="https://formsubmit.co/diell.morina5@gmail.com" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label data-label-name>Full Name *</label>
-                            <input type="text" placeholder="Your name" required>
+                            <input type="text" name="full_name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
                             <label data-label-email>Email *</label>
-                            <input type="email" placeholder="Your email" required>
+                            <input type="email" name="email" placeholder="Your email" required>
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
                             <label data-label-phone>Phone *</label>
-                            <input type="tel" placeholder="Your phone" required>
+                            <input type="tel" name="phone" placeholder="Your phone" required>
                         </div>
                         <div class="form-group">
                             <label data-label-property>Property Type *</label>
-                            <select required>
+                            <select name="property_type" required>
                                 <option value="" data-select-property>Select property type</option>
                                 <option value="residential" data-residential>Residential</option>
                                 <option value="commercial" data-commercial>Commercial</option>
@@ -196,11 +196,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label data-label-date>Preferred Date *</label>
-                            <input type="date" required>
+                            <input type="date" name="preferred_date" required>
                         </div>
                         <div class="form-group">
                             <label data-label-time>Preferred Time *</label>
-                            <select required>
+                            <select name="preferred_time" required>
                                 <option value="" data-select-time>Select time</option>
                                 <option value="08:00">8:00 AM</option>
                                 <option value="09:00">9:00 AM</option>
@@ -218,7 +218,7 @@
 
                     <div class="form-group">
                         <label data-label-service>Service Type *</label>
-                        <select required>
+                        <select name="service_type" required>
                             <option value="" data-select-service>Select service</option>
                             <option value="suvatim" data-opt-suvatim>Suvatim (Rendering)</option>
                             <option value="fasad" data-opt-fasad>Fasad (Facade)</option>
@@ -231,9 +231,10 @@
 
                     <div class="form-group">
                         <label data-label-details>Project Details</label>
-                        <textarea placeholder="Describe your project (optional)" rows="4"></textarea>
+                        <textarea name="project_details" placeholder="Describe your project (optional)" rows="4"></textarea>
                     </div>
 
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="submit-btn" data-schedule-apt>Schedule Appointment</button>
                     <p class="form-note" data-confirm-24>We'll confirm your appointment within 24 hours</p>
                 </form>
@@ -266,19 +267,20 @@
                     </div>
                 </div>
 
-                <form class="contact-form" onsubmit="handleForm(event)">
+                <form class="contact-form" action="https://formsubmit.co/diell.morina5@gmail.com" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Your Phone">
+                        <input type="tel" name="phone" placeholder="Your Phone">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="submit-btn" data-send-message>Send Message</button>
                 </form>
             </div>
@@ -293,7 +295,6 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://unpkg.com/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
