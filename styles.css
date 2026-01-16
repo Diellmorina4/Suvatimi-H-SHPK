@@ -994,6 +994,15 @@ body.navbar-top .hero {
         width: auto;
     }
 
+    body.navbar-top .language-dropdown {
+        position: absolute;
+        bottom: auto;
+        top: 100%;
+        left: auto;
+        right: 20px;
+        margin-top: 10px;
+    }
+
     /* Content sections */
     body.navbar-left .hero,
     body.navbar-top .hero {
