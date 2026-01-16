@@ -24,6 +24,7 @@
             <li><a href="#home" data-en="Home" data-sq="Shtëpi">Home</a></li>
             <li><a href="#services" data-en="Services" data-sq="Shërbime">Services</a></li>
             <li><a href="#about" data-en="About" data-sq="Rreth">About</a></li>
+            <li><a href="#suppliers" data-en="Suppliers" data-sq="Furnizuesit">Suppliers</a></li>
             <li><a href="#appointments" data-en="Book Appointment" data-sq="Rezervo Takimin">Book Appointment</a></li>
             <li><a href="#contact" data-en="Contact" data-sq="Kontakt">Contact</a></li>
         </ul>
@@ -56,12 +57,12 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🧱</div>
-                    <h3 data-suvatim-title>Suvatim (Rendering)</h3>
+                    <h3 data-suvatim-title>Suvatim</h3>
                     <p data-suvatim-desc>Professional plastering and rendering services using high-quality materials for smooth, durable finishes.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏗️</div>
-                    <h3 data-fasad-title>Fasad (Facade)</h3>
+                    <h3 data-fasad-title>Fasad </h3>
                     <p data-fasad-desc>Complete facade systems installation and renovation with premium materials and expert craftsmanship.</p>
                 </div>
                 <div class="service-card">
@@ -104,6 +105,32 @@
                         <p data-gallery>📸 Project Gallery</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suppliers Section -->
+    <section id="suppliers" class="suppliers">
+        <div class="container">
+            <h2 data-en="Our Suppliers" data-sq="Furnizuesit Tanë" data-suppliers-title>Our Suppliers</h2>
+            <p class="section-subtitle" data-en="We work with trusted quality material suppliers" data-sq="Punojmë me furnizues të besuar të materialeve cilësore" data-suppliers-subtitle>We work with trusted quality material suppliers</p>
+            <div class="suppliers-grid">
+                <a href="https://gemix.com/" target="_blank" class="supplier-card supplier-link">
+                    <div class="supplier-logo">
+                        <img src="gemix-logo.png" alt="Gemix Logo">
+                    </div>
+                    <p class="supplier-click-text" data-en="Click to visit Gemix website" data-sq="Kliko për të vizituar faqen e Gemix" data-click-gemix>Click to visit Gemix website</p>
+                    <h3>Gemix</h3>
+                    <p>Premium quality materials and supplies for facade and construction projects</p>
+                </a>
+                <a href="https://knauf.com/en" target="_blank" class="supplier-card supplier-link">
+                    <div class="supplier-logo">
+                        <img src="Knauf.png" alt="Knauf Logo">
+                    </div>
+                    <p class="supplier-click-text" data-en="Click to visit Knauf website" data-sq="Kliko për të vizituar faqen e Knauf" data-click-knauf>Click to visit Knauf website</p>
+                    <h3>Knauf</h3>
+                    <p>Leading manufacturer of drywall systems, insulation, and finishing solutions for construction</p>
+                </a>
             </div>
         </div>
     </section>
@@ -225,6 +252,10 @@
                         <p><a href="tel:+38344217540">+38344217540</a></p>
                     </div>
                     <div class="contact-item">
+                        <h3 data-email-label>📧 Email</h3>
+                        <p><a href="mailto:diell.morina5@gmail.com">diell.morina5@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
                         <h3 data-address-label>📍 Address</h3>
                         <p>Ratkoc</p>
                     </div>
@@ -262,6 +293,7 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>

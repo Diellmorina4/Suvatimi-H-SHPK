@@ -5,6 +5,7 @@ const translations = {
         home: "Home",
         services: "Services",
         about: "About",
+        suppliers: "Suppliers",
         bookAppointment: "Book Appointment",
         contact: "Contact",
         
@@ -26,6 +27,12 @@ const translations = {
         ngjyraDesc: "Professional painting services with high-quality paints and finishes for aesthetic and protective coatings.",
         izolimTitle: "Izolim (Insulation)",
         izolimDesc: "Thermal and acoustic insulation solutions to improve energy efficiency and comfort of your property.",
+        
+        // Suppliers section
+        ourSuppliers: "Our Suppliers",
+        suppliersSubtitle: "We work with trusted quality material suppliers",
+        clickGemix: "Click to visit Gemix website",
+        clickKnauf: "Click to visit Knauf website",
         
         // About section
         aboutUsTitle: "About SUVATIMI-H",
@@ -112,6 +119,7 @@ const translations = {
         home: "Shtëpi",
         services: "Shërbime",
         about: "Rreth",
+        suppliers: "Furnizuesit",
         bookAppointment: "Rezervo Takimin",
         contact: "Kontakt",
         
@@ -133,6 +141,12 @@ const translations = {
         ngjyraDesc: "Shërbime profesionale të bojëzimit me ngjyra të lartë cilësore dhe përfuntime për mbulim estetik dhe mbrojtës.",
         izolimTitle: "Izolim (Nxehtësi)",
         izolimDesc: "Zgjidhje izolimi termik dhe akustik për të përmirësuar efikasitetin energjetik dhe komoditetin e pronës tuaj.",
+        
+        // Suppliers section
+        ourSuppliers: "Furnizuesit Tanë",
+        suppliersSubtitle: "Punojmë me furnizues të besuar të materialeve cilësore",
+        clickGemix: "Kliko për të vizituar faqen e Gemix",
+        clickKnauf: "Kliko për të vizituar faqen e Knauf",
         
         // About section
         aboutUsTitle: "Rreth SUVATIMI-H",

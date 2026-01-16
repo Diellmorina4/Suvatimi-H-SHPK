@@ -327,6 +327,85 @@ body::before {
     line-height: 1.8;
 }
 
+/* Suppliers Section */
+.suppliers {
+    padding: 80px 0;
+    background: var(--gray-light);
+}
+
+.suppliers h2 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+}
+
+.suppliers .section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.suppliers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.supplier-card {
+    background: var(--text-light);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--primary-red);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.supplier-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.supplier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(196, 30, 58, 0.2);
+}
+
+.supplier-logo {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.supplier-logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+}
+
+.supplier-click-text {
+    color: var(--primary-red);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.supplier-card h3 {
+    font-size: 24px;
+    color: var(--primary-red);
+    margin-bottom: 15px;
+}
+
+.supplier-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
 /* About Section */
 .about {
     padding: 80px 0;

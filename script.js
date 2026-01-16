@@ -45,6 +45,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize EmailJS
+    emailjs.init('He199eMJjcMN_xQVm');
+    
     const savedLanguage = localStorage.getItem('language') || 'en';
     changeLanguage(savedLanguage);
     updateLanguageButtons(savedLanguage);
@@ -318,15 +321,24 @@ function handleForm(event) {
     event.preventDefault();
     
     const name = event.target.elements[0].value;
+    const email = event.target.elements[1].value;
+    const phone = event.target.elements[2].value;
+    const message = event.target.elements[3].value;
     
-    // Show success message
-    alert(`Thank you, ${name}! We will contact you soon.`);
-    
-    // Reset form
-    event.target.reset();
-    
-    // In a real application, you would send this data to your server
-    console.log('Contact form submitted');
+    // Send email using EmailJS
+    emailjs.send('service_ws6458k', 'template_jsdu5zt', {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        title: "New Contact Form Submission"
+    }).then(function(response) {
+        alert(`Thank you, ${name}! Your message has been sent successfully.`);
+        event.target.reset();
+    }, function(error) {
+        alert('Failed to send message. Please try again.');
+        console.error('EmailJS error:', error);
+    });
 }
 
 // Handle appointment form submission
@@ -352,25 +364,21 @@ function handleAppointment(event) {
         day: 'numeric' 
     });
     
-    // Show success message
-    const message = `Thank you, ${name}!\n\nYour appointment has been scheduled:\n\nDate: ${formattedDate}\nTime: ${time}\nProperty Type: ${propertyType}\nService: ${serviceType}\n\nWe will confirm shortly via email and phone.`;
-    
-    alert(message);
-    
-    // Log appointment data
-    console.log('Appointment scheduled:', {
+    // Send email using EmailJS
+    emailjs.send('service_ws6458k', 'template_jsdu5zt', {
         name: name,
         email: email,
         phone: phone,
-        propertyType: propertyType,
-        date: date,
-        time: time,
-        serviceType: serviceType,
-        details: details
+        message: `Appointment Request\n\nProperty Type: ${propertyType}\nDate: ${formattedDate}\nTime: ${time}\nService: ${serviceType}\nDetails: ${details}`,
+        title: "New Appointment Request"
+    }).then(function(response) {
+        const message = `Thank you, ${name}!\n\nYour appointment has been scheduled:\n\nDate: ${formattedDate}\nTime: ${time}\nProperty Type: ${propertyType}\nService: ${serviceType}\n\nWe will confirm shortly via email and phone.`;
+        alert(message);
+        form.reset();
+    }, function(error) {
+        alert('Failed to schedule appointment. Please try again.');
+        console.error('EmailJS error:', error);
     });
-    
-    // Reset form
-    form.reset();
 }
 
 // Close mobile menu when clicking outside
