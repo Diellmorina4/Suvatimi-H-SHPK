@@ -28,14 +28,20 @@
             <li><a href="#appointments" data-en="Book Appointment" data-sq="Rezervo Takimin">Book Appointment</a></li>
             <li><a href="#contact" data-en="Contact" data-sq="Kontakt">Contact</a></li>
         </ul>
-        <div class="language-switcher">
-            <button class="lang-dropdown-btn" onclick="toggleLanguageDropdown()">
-                <span id="current-lang">English</span>
-                <span class="dropdown-arrow">▼</span>
+        <div class="controls-section">
+            <button class="position-toggle-btn" onclick="toggleMenuPosition()" title="Toggle menu position">
+                <span id="position-text">Left</span>
+                <span class="position-icon">⇆</span>
             </button>
-            <div class="language-dropdown" id="language-dropdown">
-                <button class="lang-option active" onclick="changeLanguage('en'); toggleLanguageDropdown()">English (EN)</button>
-                <button class="lang-option" onclick="changeLanguage('sq'); toggleLanguageDropdown()">Shqip (SQ)</button>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn" onclick="toggleLanguageDropdown()">
+                    <span id="current-lang">English</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="language-dropdown" id="language-dropdown">
+                    <button class="lang-option active" onclick="changeLanguage('en'); toggleLanguageDropdown()">English (EN)</button>
+                    <button class="lang-option" onclick="changeLanguage('sq'); toggleLanguageDropdown()">Shqip (SQ)</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -253,12 +259,9 @@
                         <p><a href="tel:+38344217540">+38344217540</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3 data-email-label>📧 Email</h3>
-                        <p><a href="mailto:diell.morina5@gmail.com">diell.morina5@gmail.com</a></p>
-                    </div>
-                    <div class="contact-item">
                         <h3 data-address-label>📍 Address</h3>
-                        <p>Ratkoc</p>
+                        <p>Ratkoc-Rahovec</p>
+                        <p>Visar Hoti 273</p>
                     </div>
                     <div class="contact-item">
                         <h3 data-hours-label>⏰ Hours</h3>

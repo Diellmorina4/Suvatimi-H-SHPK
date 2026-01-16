@@ -121,11 +121,45 @@ body::before {
     padding-left: 25px;
 }
 
-/* Language Switcher */
-.language-switcher {
+/* Controls Section */
+.controls-section {
     margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.position-toggle-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: var(--text-light);
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.position-toggle-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.position-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+/* Language Switcher */
+.language-switcher {
     position: relative;
 }
 
@@ -222,6 +256,133 @@ body::before {
     background: var(--text-light);
     border-radius: 3px;
     transition: all 0.3s ease;
+}
+
+/* Navbar Position Variants */
+/* Default: Left position (navbar-left) */
+body.navbar-left {
+    margin-left: 250px;
+}
+
+body.navbar-left .navbar {
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Top position */
+body.navbar-top {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+body.navbar-top .navbar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+body.navbar-top .logo {
+    margin-bottom: 0;
+}
+
+body.navbar-top .logo h1 {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+body.navbar-top .logo .tagline {
+    display: none;
+}
+
+body.navbar-top .nav-menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    gap: 5px;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    flex: 1;
+    margin: 0 20px;
+}
+
+body.navbar-top .nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+body.navbar-top .nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    border-left: none;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+body.navbar-top .nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-left: none;
+    padding-left: 15px;
+}
+
+body.navbar-top .controls-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    flex-direction: row;
+    gap: 10px;
+    order: 1;
+}
+
+body.navbar-top .position-toggle-btn {
+    padding: 10px 15px;
+    font-size: 13px;
+    width: auto;
+}
+
+body.navbar-top .language-switcher {
+    border: none;
+    padding: 0;
+}
+
+body.navbar-top .lang-dropdown-btn {
+    width: auto;
+    padding: 10px 15px;
+    font-size: 13px;
+}
+
+body.navbar-top .language-dropdown {
+    position: fixed;
+    top: 60px;
+    bottom: auto;
+    left: auto;
+    right: 20px;
+}
+
+body.navbar-top main,
+body.navbar-top section {
+    margin-top: 0;
+}
+
+body.navbar-top .hero {
+    margin-top: 50px;
 }
 
 /* Hero Section */
@@ -720,11 +881,12 @@ body::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
+    /* Default behavior for tablets/mobile */
+    body.navbar-left {
         margin-left: 0;
     }
 
-    .navbar {
+    body.navbar-left .navbar {
         width: 100%;
         height: auto;
         position: fixed;
@@ -737,16 +899,16 @@ body::before {
         padding: 15px 20px;
     }
 
-    .logo h1 {
+    body.navbar-left .logo h1 {
         font-size: 20px;
         margin-bottom: 0;
     }
 
-    .logo .tagline {
+    body.navbar-left .logo .tagline {
         display: none;
     }
 
-    .nav-menu {
+    body.navbar-left .nav-menu {
         display: none;
         position: absolute;
         top: 70px;
@@ -761,40 +923,50 @@ body::before {
         overflow-y: auto;
     }
 
-    .nav-menu.active {
+    body.navbar-left .nav-menu.active {
         display: flex;
     }
 
-    .nav-menu a {
+    body.navbar-left .nav-menu a {
         padding: 12px 15px;
         border-left: none;
     }
 
-    .nav-menu a:hover {
+    body.navbar-left .nav-menu a:hover {
         padding-left: 15px;
         border-left: none;
     }
 
-    .hamburger {
+    body.navbar-left .hamburger {
         display: flex;
         order: 0;
         margin-bottom: 0;
     }
 
-    .language-switcher {
+    body.navbar-left .controls-section {
         margin-top: 15px;
         padding-top: 15px;
         order: 4;
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         position: static;
+        flex-direction: column;
     }
 
-    .lang-dropdown-btn {
+    body.navbar-left .position-toggle-btn {
         width: 100%;
     }
 
-    .language-dropdown {
+    body.navbar-left .language-switcher {
+        border-top: none;
+        position: static;
+    }
+
+    body.navbar-left .lang-dropdown-btn {
+        width: 100%;
+    }
+
+    body.navbar-left .language-dropdown {
         position: fixed;
         bottom: auto;
         top: 70px;
@@ -802,7 +974,69 @@ body::before {
         right: 20px;
     }
 
-    .hero {
+    /* Top navbar on mobile */
+    body.navbar-top .navbar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    body.navbar-top .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--primary-red);
+        padding: 20px;
+        gap: 0;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    body.navbar-top .nav-menu.active {
+        display: flex;
+    }
+
+    body.navbar-top .nav-menu a {
+        padding: 12px 15px;
+        border-left: none;
+        display: block;
+    }
+
+    body.navbar-top .hamburger {
+        display: flex;
+        order: 0;
+        margin-bottom: 0;
+    }
+
+    body.navbar-top .controls-section {
+        margin-top: 15px;
+        padding-top: 0;
+        border-top: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    body.navbar-top .position-toggle-btn {
+        width: 100%;
+    }
+
+    body.navbar-top .language-switcher {
+        border-top: none;
+        width: 100%;
+    }
+
+    body.navbar-top .lang-dropdown-btn {
+        width: 100%;
+    }
+
+    /* Content sections */
+    body.navbar-left .hero,
+    body.navbar-top .hero {
         margin-top: 70px;
     }
 

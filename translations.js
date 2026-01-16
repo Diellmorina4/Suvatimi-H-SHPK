@@ -9,6 +9,10 @@ const translations = {
         bookAppointment: "Book Appointment",
         contact: "Contact",
         
+        // Menu Position
+        menuPositionLeft: "Left",
+        menuPositionTop: "Top",
+        
         // Hero section
         heroTitle: "SUVATIMI-H",
         heroSubtitle: "Professional Facade Services",
@@ -122,6 +126,10 @@ const translations = {
         suppliers: "Furnizuesit",
         bookAppointment: "Rezervo Takimin",
         contact: "Kontakt",
+        
+        // Menu Position
+        menuPositionLeft: "Majtas",
+        menuPositionTop: "Lart",
         
         // Hero section
         heroTitle: "SUVATIMI-H",
