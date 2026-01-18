@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initEmailJS();
     
-    const savedLanguage = localStorage.getItem('language') || 'en';
+    const savedLanguage = localStorage.getItem('language') || 'sq';
     changeLanguage(savedLanguage);
     updateLanguageButtons(savedLanguage);
 });
